@@ -29,7 +29,7 @@ class CategoryController extends Controller
     }
 
     public function store(Request $request) {
-        $validator = Validator::make($request->all(),[
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'slug' => 'required|unique:categories',
         ]);
@@ -105,7 +105,7 @@ class CategoryController extends Controller
             ]);
         }
 
-        $validator = Validator::make($request->all(),[
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'slug' => 'required|unique:categories,slug,'.$category->id.',id',
         ]);

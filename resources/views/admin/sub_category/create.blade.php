@@ -77,13 +77,10 @@
 
 @section('customeJs')
 <script>
-
 $("#subCategoryForm").submit(function(event){
     event.preventDefault();
-
     var element = $("#subCategoryForm");
     $("button[type=submit]").prop('disabled', true);
-    
     $.ajax({
         url: '{{ route("sub-categories.store") }}',
         type: 'post',

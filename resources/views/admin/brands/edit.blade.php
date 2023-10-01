@@ -32,14 +32,14 @@
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="email">Slug</label>
+                                <label for="slug">Slug</label>
                                 <input type="text" readonly name="slug" id="slug" class="form-control" placeholder="Slug" value="{{ $brand->slug }}">
                                 <p></p>	
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="email">Status</label>
+                                <label for="status">Status</label>
                                 <select name="status" id="status" class="form-control">
                                     <option {{ ($brand->status == 1) ? 'selected' : '' }} value="1">Active</option>
                                     <option {{ ($brand->status == 0) ? 'selected' : '' }} value="0">Block</option>
