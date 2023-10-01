@@ -85,6 +85,7 @@ class CategoryController extends Controller
     public function edit($categoryId, Request $request) {
         $category = Category::find($categoryId);
         if (empty($category)) {
+            $request->session()->flash('error', 'Record not found');
             return redirect()->route('categories.index');
         }
 
@@ -96,8 +97,7 @@ class CategoryController extends Controller
         $category = Category::find($categoryId);
 
         if (empty($category)) {
-            $request->session()->flash('error', 'Category not found');
-
+            $request->session()->flash('error', 'Record not found');
             return response()->json([
                 'status' => false,
                 'notFound' => true,
@@ -111,7 +111,7 @@ class CategoryController extends Controller
         ]);
 
         if ($validator->passes()) {
-
+            // $category = new Category();
             $category->name = $request->name;
             $category->slug = $request->slug;
             $category->status = $request->status;

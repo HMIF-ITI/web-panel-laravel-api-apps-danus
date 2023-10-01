@@ -87,7 +87,7 @@ $("#categoryForm").submit(function(event){
 
             if (response["status"] == true) {
 
-                window.location.href="{{ route('categories.index') }}";
+                window.location.href = "{{ route('categories.index') }}";
 
                 $("#name").removeClass('is-invalid')
                 .siblings('p')
@@ -96,7 +96,7 @@ $("#categoryForm").submit(function(event){
                 $("#slug").removeClass('is-invalid')
                 .siblings('p')
                 .removeClass('invalid-feedback').html("");
-                
+
             } else {
                 var errors = response['errors'];
                 if (errors['name']) {
@@ -120,7 +120,7 @@ $("#categoryForm").submit(function(event){
                 }
             }
 
-            
+
 
         }, error: function(jqXHR, exception){
             console.log("Something went wrong");
@@ -166,6 +166,5 @@ $("#categoryForm").submit(function(event){
             //console.log(response)
         }
     });
-            
 </script>
 @endsection

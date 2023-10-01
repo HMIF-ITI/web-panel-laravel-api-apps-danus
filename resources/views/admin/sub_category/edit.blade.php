@@ -19,7 +19,7 @@
 <section class="content">
     <!-- Default box -->
     <div class="container-fluid">
-        <form action="" name="subCategoryForm" id="subCategoryForm">
+        <form action="" name="subCategoryForm" id="subCategoryForm" method="post">
             <div class="card">
                 <div class="card-body">								
                     <div class="row">
@@ -111,7 +111,7 @@ $("#subCategoryForm").submit(function(event){
             } else {
 
                 if (response['notFound'] == true) {
-                    window.location.href="{{ route('sub-categories.index') }}";
+                    window.location.href = "{{ route('sub-categories.index') }}";
                     return false;
                 }
 

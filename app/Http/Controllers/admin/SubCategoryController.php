@@ -68,7 +68,7 @@ class SubCategoryController extends Controller
 
         $subCategory = SubCategory::find($id);
         if (empty($subCategory)) {
-            $request->session()->flash('error', 'Recored not found');
+            $request->session()->flash('error', 'Record not found');
             return redirect()->route('sub-categories.index');
         }
 
@@ -83,10 +83,11 @@ class SubCategoryController extends Controller
         $subCategory = SubCategory::find($id);
 
         if (empty($subCategory)) {
-            $request->session()->flash('error', 'Recored not found');
+            $request->session()->flash('error', 'Record not found');
             return response([
                 'status' => false,
-                'notFound' => true
+                'notFound' => true,
+                'message' => 'Sub Category not found'
             ]);
             // return redirect()->route('sub-categories.index');
         }
@@ -127,10 +128,10 @@ class SubCategoryController extends Controller
         $subCategory = SubCategory::find($id);
 
         if (empty($subCategory)) {
-            $request->session()->flash('error', 'Recored not found');
-            return response([
-                'status' => false,
-                'notFound' => true
+            $request->session()->flash('error', 'Sub Category not found');
+            return response()->json([
+                'status' => true,
+                'message' => 'Sub Category not found'
             ]);
         }
 
