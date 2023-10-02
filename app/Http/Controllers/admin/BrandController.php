@@ -49,7 +49,7 @@ class BrandController extends Controller
         } else {
             return response()->json([
                 'status' => false,
-                'erorrs' => $validator->errors()
+                'errors' => $validator->errors()
             ]);
         }
     }
@@ -101,7 +101,7 @@ class BrandController extends Controller
         } else {
             return response()->json([
                 'status' => false,
-                'erorrs' => $validator->errors()
+                'errors' => $validator->errors()
             ]);
         }
     }
