@@ -118,10 +118,9 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function(response) {
-                    window.location.href="{{ route('sub-categories.index') }}";
-                    // if (response["status"]) {
-                    //     window.location.href="{{ route('sub-categories.index') }}";
-                    // }
+                    if (response["status"]) {
+                        window.location.href="{{ route('sub-categories.index') }}";
+                    }
                 }
             });
         }
